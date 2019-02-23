@@ -1,0 +1,27 @@
+.container{
+	margin: 0 auto;
+	padding: 2rem 1rem;
+	position: relative;
+	@include breakpoint(map-get($grid-breakpoints, sm)){
+		max-width: map-get($container-max-widths, sm);
+	}
+	@include breakpoint(map-get($grid-breakpoints, md)){
+		max-width: map-get($container-max-widths, md);
+		padding: 4rem 3rem;
+	}
+	@include breakpoint(map-get($grid-breakpoints, lg)){
+		max-width: map-get($container-max-widths, lg);
+	}
+	@include breakpoint(map-get($grid-breakpoints, xl)){
+		max-width: map-get($container-max-widths, xl);
+	}
+	@include breakpoint(map-get($grid-breakpoints, xxl)){
+		max-width: map-get($container-max-widths, xxl);
+	}
+	@include breakpoint(map-get($grid-breakpoints, xxxl)){
+		max-width: map-get($container-max-widths, xxxl);
+	}
+	@include breakpoint(map-get($grid-breakpoints, xxxxl)){
+		max-width: map-get($container-max-widths, xxxxl);
+	}
+}

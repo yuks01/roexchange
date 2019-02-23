@@ -1,0 +1,57 @@
+// Rem output with px fallback
+@mixin font-size($sizeValue: 1) {
+	font-size: ($sizeValue * $font__size) * 1px;
+	font-size: $sizeValue * 1rem;
+}
+
+// Center block
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+	content: "";
+	display: table;
+	table-layout: fixed;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+	clear: both;
+}
+
+// Column width with margin
+@mixin column-width($numberColumns: 3) {
+	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
+}
+
+
+// Breakpoints
+@mixin breakpoint($breakpoint){
+	@media(min-width: $breakpoint){
+		@content;
+	}
+}
+
+// Col
+@mixin col($colSize, $colSize2){
+	.col-#{$colSize2}-#{$colSize}{
+		width: calc( ( #{$colSize} * (100% / 12) - 5px)) !important; 
+		display: inline-block !important;
+		vertical-align: middle;
+		position: relative;
+		padding: 1rem;
+
+	}
+}
+
+//Col 100
+@mixin colHundred($colSize, $colSize2){
+	.col-#{$colSize2}-#{$colSize}{
+		width: 100%;
+		padding: 1rem;
+	}
+}
